@@ -9,7 +9,7 @@ exports.up = function (knex) {
 
     table.string("model").notNullable();
 
-    table.integer("milage", 10, 2).unsigned().notNullable();
+    table.integer("mileage", 10, 2).unsigned().notNullable();
 
     table.string("title");
 
