@@ -112,11 +112,11 @@ describe("server.js", () => {
       expect(res.status).toBe(400);
       expect(res.body).toHaveProperty("message", "model is missing");
     }, 750);
-    test("[10] responds with a 400 and proper error on missing milage", async () => {
-      const { milage, ...badCar } = cars[0]; // eslint-disable-line
+    test("[10] responds with a 400 and proper error on missing mileage", async () => {
+      const { mileage, ...badCar } = cars[0]; // eslint-disable-line
       const res = await request(server).post("/api/cars").send(badCar);
       expect(res.status).toBe(400);
-      expect(res.body).toHaveProperty("message", "milage is missing");
+      expect(res.body).toHaveProperty("message", "mileage is missing");
     }, 750);
     test("[11] responds with a 400 and proper error on invalid vin", async () => {
       const badCar = { ...cars[0], vin: "abc" };
