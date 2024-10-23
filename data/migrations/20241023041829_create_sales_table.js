@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knes.schema.createTable("sales", (table) => {
+  return knex.schema.createTable("sales", (table) => {
     table.increments("id").primary();
     table.integer("car_id").unsigned().notNullable().references("id").inTable("cars").onDelete("CASCADE");
     table.decimal("sale_price", 10, 2).notNullable();
