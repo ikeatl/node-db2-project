@@ -17,7 +17,7 @@ const checkCarId = async (req, res, next) => {
 
 const checkCarPayload = (req, res, next) => {
   // DO YOUR MAGIC
-  const { vin, make, model, milage } = req.body;
+  const { vin, make, model, mileage } = req.body;
 
   if (!vin) {
     return res.status(400).json({ message: "vin is missing" });
@@ -25,8 +25,8 @@ const checkCarPayload = (req, res, next) => {
     return res.status(400).json({ message: "make is missing" });
   } else if (!model) {
     return res.status(400).json({ message: "model is missing" });
-  } else if (!milage) {
-    return res.status(400).json({ message: "milage is missing" });
+  } else if (!mileage) {
+    return res.status(400).json({ message: "mileage is missing" });
   }
   next();
 };
